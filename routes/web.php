@@ -37,3 +37,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/configuracion', [App\Http\Controllers\UserController::class, 'config'])->name('config');
+
+Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+
+
+//Route::get('/configuracion', 'UserController@config')->name('config'); con esta ruta te comes un buen mojon
