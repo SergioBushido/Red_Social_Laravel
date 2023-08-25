@@ -10,17 +10,39 @@ class UserController extends Controller
         return view('user.config');
     }
     
-   public function update(Request $request){
-    $id = \Auth::user()->id; // Cambio de $ide a $id
+  public function update(Request $request){
+    // Conseguir usuario identificado
+    $user = \Auth::user();  
+    $id = \Auth::user()->id;  // Cambio de $ide a $id
+    
+    
+    
+    // VALIDACION DESDE LARAVEL **VALIDATE**   
+    $validate = $this->validate($request, [  
+        'name' => 'required|string|max:255',
+        'surname' => 'required|string|max:255',
+        'nick' => 'required|string|max:255|unique:users,nick,'.$id,
+        'email' => 'required|string|email|max:255|unique:users,email,' .$id,
+    ]);
+    
+    // Recoger los datos del formulario
     $name = $request->input('name');
     $surname = $request->input('surname');
     $nick = $request->input('nick');
     $email = $request->input('email');
     
-    var_dump($id);
-    var_dump($name);
-    var_dump($email);
-    die();
+    // Asignar nuevos valores al objeto del usuario
+    $user->name = $name;
+    $user->surname = $surname;
+    $user->nick = $nick;
+    $user->email = $email;
+    
+    // Ejecutar consulta y ACTUALIZAR cambios en db
+    $user->update();
+    
+    return redirect()->route('config')
+                     ->with(['message' => 'Usuario actualizado correctamente']);
 }
+
 
 }

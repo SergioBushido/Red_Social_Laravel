@@ -53,7 +53,7 @@
                             <a href="" class="nav-link">Inicio</a>
                              
                         </li>
-                        <li> class="nav-item">
+                        <li class="nav-item">
                         <a href="" class="nav-link">Subir imagen</a>
                          </li>
                             <li class="nav-item dropdown">
