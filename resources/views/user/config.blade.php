@@ -72,10 +72,16 @@
                                 @enderror
                             </div>
                         </div>
+                                            
+                        
+                       <div class="row mb-3">
+                           
 
-                        <div class="row mb-3">
                             <label for="image_path" class="col-md-4 col-form-label text-md-end">{{ __('Avatar') }}</label>
                             <div class="col-md-6">
+                                @if(Auth::user()->image)
+                                <img src="{{ route('user.avatar', ['filename'=> Auth::user()->image]) }}" class="avatar"/>
+                                @endif
                                 <input id="image_path" type="file" class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}" name="image_path">
                                 @error('image_path') 
                                 <span class="invalid-feedback" role="alert">
@@ -102,4 +108,3 @@
     </div>
 </div>
 @endsection
-section

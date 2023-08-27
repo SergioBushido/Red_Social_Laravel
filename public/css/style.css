@@ -1,0 +1,14 @@
+form .avatar{
+    width: 55px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+     
+}
+/*esto no sirve pa na...el css lo he cargado desde app.scss*/
+.container-avatar img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  object-fit: cover; /* Ajusta la imagen manteniendo su proporción */
+}
+

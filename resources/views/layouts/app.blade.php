@@ -12,9 +12,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    
+     <!--Styles -->
+   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+   
+   
+
 </head>
 <body>
     <div id="app">
@@ -56,6 +63,14 @@
                         <li class="nav-item">
                         <a href="" class="nav-link">Subir imagen</a>
                          </li>
+                        <div class="container-avatar">
+                            <li>
+                                @if(Auth::user()->image)
+                                <img src="{{ route('user.avatar', ['filename'=> Auth::user()->image]) }}" class="avatar">
+                                @endif
+                            </li>
+                        </div>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

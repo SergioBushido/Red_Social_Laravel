@@ -41,5 +41,6 @@ Route::get('/configuracion', [App\Http\Controllers\UserController::class, 'confi
 
 Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 
+Route::get('/users/avatar/{filename}', [App\Http\Controllers\UserController::class, 'getImage'])->name('user.avatar');
 
 //Route::get('/configuracion', 'UserController@config')->name('config'); con esta ruta te comes un buen mojon
