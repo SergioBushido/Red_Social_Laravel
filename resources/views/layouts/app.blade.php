@@ -57,17 +57,16 @@
                             @endif
                         @else
                         <li class="nav-item">
-                            <a href="" class="nav-link">Inicio</a>
+                            <a href="{{route('home')}}" class="nav-link">Inicio</a>
                              
                         </li>
                         <li class="nav-item">
-                        <a href="" class="nav-link">Subir imagen</a>
-                         </li>
+                            <a href="{{ route('image.create') }}" class="nav-link">Subir imagen</a>
+                        </li>
                         <div class="container-avatar">
+                            
                             <li>
-                                @if(Auth::user()->image)
-                                <img src="{{ route('user.avatar', ['filename'=> Auth::user()->image]) }}" class="avatar">
-                                @endif
+                               @include('includes.avatar')
                             </li>
                         </div>
 

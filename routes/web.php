@@ -44,3 +44,5 @@ Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update
 Route::get('/users/avatar/{filename}', [App\Http\Controllers\UserController::class, 'getImage'])->name('user.avatar');
 
 //Route::get('/configuracion', 'UserController@config')->name('config'); con esta ruta te comes un buen mojon
+
+Route::get('/subir-imagen', [App\Http\Controllers\ImageController::class, 'create'])->name('image.create');
