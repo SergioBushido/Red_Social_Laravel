@@ -46,3 +46,6 @@ Route::get('/users/avatar/{filename}', [App\Http\Controllers\UserController::cla
 //Route::get('/configuracion', 'UserController@config')->name('config'); con esta ruta te comes un buen mojon
 
 Route::get('/subir-imagen', [App\Http\Controllers\ImageController::class, 'create'])->name('image.create');
+
+Route::post('/image/save', [App\Http\Controllers\ImageController::class, 'save'])->name('image.save');
+

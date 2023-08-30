@@ -1,14 +1,30 @@
-form .avatar{
+/* Estilos para la imagen de avatar 
+.avatar {
     width: 55px;
     margin-bottom: 15px;
     margin-left: 10%;
-     
-}
-/*esto no sirve pa na...el css lo he cargado desde app.scss*/
-.container-avatar img.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* Hace que la imagen sea redonda */
-  object-fit: cover; /* Ajusta la imagen manteniendo su proporción */
 }
 
+Estilos para los avatares en la barra de navegación y las tarjetas de imagen 
+.container-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: left;
+    margin-right: 15px;
+}
+
+Estilos para la imagen de avatar dentro de los contenedores de avatar 
+.container-avatar img 
+    height: 100%;
+}
+
+ Estilos para los datos del usuario en las tarjetas de imagen 
+.data-user {
+    font-weight: bold;
+    line-height: 40px;
+    margin-left: 10px; /* Agregamos un margen izquierdo para separar los datos del avatar 
+}
+
+*/
